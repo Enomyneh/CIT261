@@ -1,0 +1,54 @@
+.stat-box {
+    border: solid thin;
+    border-radius: 10px;
+    width: 90px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+span.ability-mod {
+    font-size: 32px
+}
+
+.stat-box label {
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stat-box input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+#strength {
+    background-color: #ffabab;
+}
+
+#dexterity {
+    background-color: #fff1ab;
+}
+
+#constitution {
+    background-color: #abffb5;
+}
+
+#intelligence {
+    background-color: #abc8ff;
+}
+
+#wisdom {
+    background-color: #c8abff;
+}
+
+#charisma {
+    background-color: #ffabff;
+}
+
+.center-col {
+    border: solid thin;
+}

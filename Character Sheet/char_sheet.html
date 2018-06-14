@@ -6,21 +6,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="char_sheet.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!--AngularJs-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="char_sheet_ctrl.js"></script>
+  
 </head>
 
 <body ng-app="myApp" ng-controller="CharacterController">
@@ -31,51 +29,53 @@
     </nav>
   </div>
 
-  <div class="container col-sm-5 border">
+  <div class="container col-sm-12 border">
 
     <!--Ability scores column-->
-    <div class="ability-scores container col-sm-1">
+    <div class="ability-scores container col-sm-1 sidenav">
       <!--Strength-->
       <div id="strength" class="stat-box container border col-sm-1">
         <label for="strength">STRENGTH</label>
-        <span id="strength_score" ><input type="text" ng-model="character.ability_score_strength"></span>
-        <span id="strength_mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
+        <span id="strength_mod" class="ability-mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
+        <span id="strength_score" class="ability-score"><input type="text" class="ability-score" ng-model="character.ability_score_strength"></span>
       </div>
-      <!--Strength-->
-      <div id="strength" class="stat-box container border col-sm-1">
-          <label for="strength">STRENGTH</label>
-          <span id="strength_score" ><input type="text" ng-model="character.ability_score_strength"></span>
-          <span id="strength_mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
-        </div>
-        <!--Strength-->
-      <div id="strength" class="stat-box container border col-sm-1">
-          <label for="strength">STRENGTH</label>
-          <span id="strength_score" ><input type="text" ng-model="character.ability_score_strength"></span>
-          <span id="strength_mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
-        </div>
-        <!--Strength-->
-      <div id="strength" class="stat-box container border col-sm-1">
-          <label for="strength">STRENGTH</label>
-          <span id="strength_score" ><input type="text" ng-model="character.ability_score_strength"></span>
-          <span id="strength_mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
-        </div>
-        <!--Strength-->
-      <div id="strength" class="stat-box container border col-sm-1">
-          <label for="strength">STRENGTH</label>
-          <span id="strength_score" ><input type="text" ng-model="character.ability_score_strength"></span>
-          <span id="strength_mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
-        </div>
-        <!--Strength-->
-      <div id="strength" class="stat-box container border col-sm-1">
-          <label for="strength">STRENGTH</label>
-          <span id="strength_score" ><input type="text" ng-model="character.ability_score_strength"></span>
-          <span id="strength_mod">{{calcAbilityMod(character.ability_score_strength)}}</span>
-        </div>
+      <!--Dexterity-->
+      <div id="dexterity" class="stat-box container border col-sm-1">
+          <label for="dexterity">DEXTERITY</label>
+          <span id="dexterity_mod" class="ability-mod">{{calcAbilityMod(character.ability_score_dexterity)}}</span>
+          <span id="dexterity_score" class="ability-score"><input type="text" class="ability-score" ng-model="character.ability_score_dexterity"></span>
+      </div>
+      <!--Constitution-->
+      <div id="constitution" class="stat-box container border col-sm-1">
+          <label for="constitution">CONSTITUTION</label>
+          <span id="constitution_mod" class="ability-mod">{{calcAbilityMod(character.ability_score_constitution)}}</span>
+          <span id="constitution_score" class="ability-score"><input type="text" class="ability-score" ng-model="character.ability_score_constitution"></span>
+      </div>
+      <!--Intelligence-->
+      <div id="intelligence" class="stat-box container border col-sm-1">
+          <label for="intelligence">INTELLIGENCE</label>
+          <span id="intelligence_mod" class="ability-mod">{{calcAbilityMod(character.ability_score_intelligence)}}</span>
+          <span id="intelligence_score" class="ability-score"><input type="text" class="ability-score" ng-model="character.ability_score_intelligence"></span>
+      </div>
+      <!--Wisdom-->
+      <div id="wisdom" class="stat-box container border col-sm-1">
+          <label for="wisdom">WISDOM</label>
+          <span id="wisdom_mod" class="ability-mod">{{calcAbilityMod(character.ability_score_wisdom)}}</span>
+          <span id="wisdom_score" class="ability-score"><input type="text" class="ability-score" ng-model="character.ability_score_wisdom"></span>
+      </div>
+      <!--Charisma-->
+      <div id="charisma" class="stat-box container border col-sm-1">
+          <label for="charisma">STRENGTH</label>
+          <span id="charisma_mod" class="ability-mod">{{calcAbilityMod(character.ability_score_charisma)}}</span>
+          <span id="charisma_score" class="ability-score"><input type="text" class="ability-score" ng-model="character.ability_score_charisma"></span>
+      </div>
     </div>
 
     <!--Center Column-->
-    <div class="container col-sm-3">
-      
+    <div class="container col-sm-3 container-fluid">
+      <div class="container col-sm-3 core-stats center-col" id="core_stats">
+        
+      </div>
     </div>
 
 

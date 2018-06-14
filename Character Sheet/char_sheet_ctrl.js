@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('CharacterController', function($scope) {
+app.controller('CharacterController', ['$scope', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
 
@@ -24,4 +24,4 @@ app.controller('CharacterController', function($scope) {
         score = parseInt(ability_score);
         return Math.floor((score - 10) / 2);
     }
-});
+}]);
