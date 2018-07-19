@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Dice Roller</title>
     <meta charset="utf-8" />
@@ -11,15 +12,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
     <script src="diceController.js"></script>
 </head>
+
 <body ng-app="DiceRoller" ng-controller="DiceCtrl">
-    <div ng-init="init()">
+    <div class="col-md-4 col-xs-1"></div>
+    <div class="col-md-4 col-xs-8" ng-init="init()">
         <form>
-            <div class="form-group">
+            <div class="form-group col-md-3 col-xs-4">
+                <input type="number" class="form-control" ng-model="dieCount">
+            </div>
+            <div class="form-group col-md-3 col-xs-4">
                 <select class="form-control" ng-model="dieType">
-                    <option ng-repeat="d in dice" value="d.value">{{d.name}}</option>
+                    <option ng-repeat="d in dice" value="{{d.value}}">{{d.name}}</option>
                 </select>
             </div>
+            <div class="form-group col-md-3 col-xs-4">
+                +<input type="number" class="form-control" ng-model="mod">
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" value="Roll!" ng-click="roll()">
+            </div>
         </form>
+        <h2>{{output}}</h2>
     </div>
+    <div class="col-md-4 col-xs-1"></div>
 </body>
+
 </html>
