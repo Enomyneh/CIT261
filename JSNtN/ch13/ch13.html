@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chapter 13 AJAX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="ch13.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="MovieCtrl">
+    <div class="container col-md-3 col-lg-3">
+        <div class="container">
+            <h3>Chapter 13 AJAX</h3>
+            <p>This program makes AJAX requests to the OMDb API (Open Movie Database) to search movies and their details.
+                <br
+                /> Search a movie title and click the results for details.
+            </p>
+        </div>
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label for="searchText">Search</label>
+                    <input type="text" class="form-control" id="searchText" ng-model="searchText" placeholder="Search movies">
+                </div>
+                <button type="button" class="btn btn-primary" ng-click="search()">Search</button>
+            </form>
+        </div>
+        <br>
+        <div class="container">
+            <div class="list-group">
+                <button type="button" ng-repeat="m in movies" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#exampleModal"
+                    ng-click="showDetails(m.imdbID)">
+                    {{m.Title}}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{details.Title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{details.Plot}}</p>
+                    <img src="{{details.Poster}}">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
