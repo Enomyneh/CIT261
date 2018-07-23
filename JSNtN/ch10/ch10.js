@@ -1,6 +1,6 @@
 function amIOldEnough(age) {
     console.log(age);
-    if (isNaN(age)) {
+    if (isNaN(age) || age == "") {
         throw "Not a number";
     }
     if (age == 12) {
