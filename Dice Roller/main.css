@@ -1,0 +1,50 @@
+div.advanceRoll {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input.form-control {
+    width: 50px;
+}
+
+select.form-control {
+    width: 80px;
+}
+
+img.quick-roll {
+    width: 80px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.bottom {
+    position: bottom;
+}
+
+.form-control {
+    display: inline;
+}
+
+#out {
+    height: 100px;
+}
+
+figure.figure {
+    width: 80px;
+    display: inline-block;
+}
+
+span.quick-roll {
+    display: inline;
+}
+
+span.die-caption {
+    display: inline-block;
+}

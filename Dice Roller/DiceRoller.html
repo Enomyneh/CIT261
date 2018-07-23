@@ -11,30 +11,81 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
     <script src="diceController.js"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body ng-app="DiceRoller" ng-controller="DiceCtrl">
-    <div class="col-md-4 col-xs-1"></div>
-    <div class="col-md-4 col-xs-8" ng-init="init()">
-        <form>
-            <div class="form-group col-md-3 col-xs-4">
-                <input type="number" class="form-control" ng-model="dieCount">
+    <!--Banner-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header text-center">
+                <h1>Dice Roller</h1>
             </div>
-            <div class="form-group col-md-3 col-xs-4">
-                <select class="form-control" ng-model="dieType">
-                    <option ng-repeat="d in dice" value="{{d.value}}">{{d.name}}</option>
-                </select>
-            </div>
-            <div class="form-group col-md-3 col-xs-4">
-                +<input type="number" class="form-control" ng-model="mod">
-            </div>
-            <div class="form-group">
-                <input type="button" class="btn btn-primary" value="Roll!" ng-click="roll()">
-            </div>
-        </form>
-        <h2>{{output}}</h2>
+        </div>
+    </nav>
+    <!--Output-->
+    <div class="container col-xs-12 text-center" id="out">
+        <h1>{{output}}</h1>
     </div>
-    <div class="col-md-4 col-xs-1"></div>
+    <!--Quick Rolls-->
+    <div class="container col-xs-12 text-center">
+        <h4>Quick Rolls</h4>
+        <!--d4-->
+        <figure class="figure clickable" ng-click="roll(1, 4, 0)">
+            <img src="images/d4.jpg" class="img-fluid quick-roll center clickable" alt="d4">
+            <figcaption class="figure-caption">d4</figcaption>
+        </figure>
+        <!--d6-->
+        <figure class="figure clickable" ng-click="roll(1, 6, 0)">
+            <img src="images/d6.jpg" class="img-fluid quick-roll center clickable" alt="d6">
+            <figcaption class="figure-caption">d6</figcaption>
+        </figure>
+        <!--d8-->
+        <figure class="figure clickable" ng-click="roll(1, 8, 0)">
+            <img src="images/d8.jpg" class="img-fluid quick-roll center clickable" alt="d8">
+            <figcaption class="figure-caption">d8</figcaption>
+        </figure>
+        <!--d10-->
+        <figure class="figure clickable" ng-click="roll(1, 10, 0)">
+            <img src="images/d10.jpg" class="img-fluid quick-roll center clickable" alt="d10">
+            <figcaption class="figure-caption">d10</figcaption>
+        </figure>
+        <!--d12-->
+        <figure class="figure clickable" ng-click="roll(1, 12, 0)">
+            <img src="images/d12.jpg" class="img-fluid quick-roll center clickable" alt="d12">
+            <figcaption class="figure-caption">d12</figcaption>
+        </figure>
+        <!--d20-->
+        <figure class="figure clickable" ng-click="roll(1, 20, 0)">
+            <img src="images/d20.jpg" class="img-fluid quick-roll center clickable" alt="d20">
+            <figcaption class="figure-caption">d20</figcaption>
+        </figure>
+    </div>
+    <!--Advanced roll-->
+    <div class="container col-xs-12" ng-init="init()">
+        <div class="advanceRoll text-center">
+            <h4>Advanced Roll</h4>
+            <form>
+                <div class="form-group">
+                    <!--Die count-->
+                    <input id="dieCount" type="number" class="form-control" ng-model="dieCount">
+                    <!--Die type-->
+                    <select id="dieType" class="form-control" ng-model="dieType">
+                        <option ng-repeat="d in dice" value="{{d.value}}">{{d.name}}</option>
+                    </select>
+                    <!--Modifier-->
+                    <h3 style="display: inline;">+</h3>
+                    <input type="number" class="form-control" ng-model="mod">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Button-->
+    <div class="container col-xs-12 fixed-bottom text-center bottom">
+        <div class="form-group">
+            <input type="button" class="btn btn-primary btn-lg" value="Roll!" ng-click="roll(dieCount, dieType, mod)">
+        </div>
+    </div>
 </body>
 
 </html>
